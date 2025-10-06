@@ -27,7 +27,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Added from your demo project -->
+        <!-- ✅ Added from your demo project -->
         <!-- Spring Data JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

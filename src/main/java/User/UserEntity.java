@@ -1,8 +1,7 @@
 package User;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -14,6 +13,9 @@ import java.time.LocalDate;
 @Table(name = "accommodation_db")
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 public class UserEntity {
 
@@ -21,42 +23,41 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
 
-    @Column(name="First_name", nullable = false)
+    @Column(name = "First_name", nullable = false)
     private String firstName;
 
-    @Column(name="Last_name", nullable = false)
+    @Column(name = "Last_name", nullable = false)
     private String lastName;
 
-    @Column(name="date_of_birth")
+    @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
-    @Column(name="role", nullable = false)
+    @Column(name = "role", nullable = false)
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
-    @Column(name="email", nullable = false, unique = true)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name="password", nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name="phoneNumber")
+    @Column(name = "phoneNumber")
     private String phoneNumber;
 
     @Column(name = "avatar")
     private String avatar;
 
-    @Column(name="createdAt", nullable = false, updatable = false)
+    @Column(name = "createdAt", nullable = false, updatable = false)
     private Instant createdAt;
 
-    @Column(name="createBy")
+    @Column(name = "createBy")
     @CreatedDate
     private String createdBy;
 
     @Column(name = "lastUpdateAt")
     @LastModifiedDate
     private Instant lastUpdatedAt;
-
 
     @Override
     public String toString() {

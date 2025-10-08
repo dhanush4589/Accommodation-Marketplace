@@ -1,7 +1,7 @@
 package User;
 
 public enum UserRole {
-    ADMIN,
-    USER,
-    MANAGER
+    HOST,
+    GUEST,
+    ADMIN
 }

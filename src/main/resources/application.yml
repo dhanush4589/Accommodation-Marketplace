@@ -12,3 +12,8 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
 
+# Custom application configuration
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+
